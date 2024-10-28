@@ -1,5 +1,8 @@
 import unittest
-from face_recognition_module import generate_embeddings  # Replace with actual module name
+
+from face_recognition_module import \
+    generate_embeddings  # Replace with actual module name
+
 
 class TestGenerateEmbeddings(unittest.TestCase):
     def test_invalid_face_data(self):
@@ -20,6 +23,7 @@ class TestGenerateEmbeddings(unittest.TestCase):
         large_face_data = [0.1] * 10000  # Example of a large data array
         with self.assertRaises(ValueError):
             generate_embeddings(large_face_data)
+
 
 if __name__ == "__main__":
     unittest.main()
