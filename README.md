@@ -143,3 +143,86 @@ For detailed API documentation, please refer to the [API Documentation](API_DOCU
 
 This project is licensed under the **APACHE License** - see the [LICENSE](LICENSE) file for details.
 
+## deeptune: A Python Package for Model Fine-Tuning and Training
+
+`deeptune` is a Python package designed to help you fine-tune and train models of siamese architecture. It provides different backend options and loss functions like triplet loss and arcface loss.
+
+### Features
+
+- **Model Fine-Tuning:** Fine-tune pre-trained models with ease.
+- **Training:** Train models with different backend options and loss functions.
+- **Evaluation:** Evaluate models using various metrics.
+- **CLI Support:** Interact with the package through the command line.
+
+### Installation
+
+To install the package, clone the repository and install the required packages:
+
+```bash
+git clone https://github.com/Devasy23/FaceRec.git
+cd FaceRec/deeptune
+pip install -r requirements.txt
+```
+
+### Usage
+
+#### Command-Line Interface (CLI)
+
+The package provides a CLI to interact with the model fine-tuning and training functionalities.
+
+To evaluate a model, use the following command:
+
+```bash
+python -m deeptune.cli.cli evaluate_model <model_path> <dataset_path>
+```
+
+Replace `<model_path>` with the path to your model file and `<dataset_path>` with the path to your dataset.
+
+#### Example
+
+Here is an example of how to use the package in your Python code:
+
+```python
+from deeptune.evaluation.eval_mark_I import (
+    load_and_preprocess_image,
+    generate_embeddings,
+    calculate_intra_cluster_distances,
+)
+from keras.models import load_model
+import numpy as np
+
+# Load the pre-trained model
+model_path = "path_to_your_model.h5"
+model = load_model(model_path)
+
+# Path to the dataset
+dataset_path = "path_to_your_dataset"
+
+# Generate embeddings
+embeddings, labels = generate_embeddings(model, dataset_path)
+
+# Calculate intra-cluster distances
+intra_distances = calculate_intra_cluster_distances(embeddings, labels)
+
+# Output the results
+print(f"Intra-Cluster Distances: {intra_distances}")
+print(f"Mean Distance: {np.mean(intra_distances)}")
+```
+
+### Project Structure
+
+- `deeptune/`: Main package directory.
+  - `__init__.py`: Makes `deeptune` a Python package.
+  - `data/`: Sub-package for data-related functionalities.
+  - `models/`: Sub-package for model-related functionalities.
+  - `training/`: Sub-package for training-related functionalities.
+  - `evaluation/`: Sub-package for evaluation-related functionalities.
+  - `utils/`: Sub-package for utility functions.
+  - `cli/`: Sub-package for CLI-related functionalities.
+  - `config.py`: Configuration file for storing settings or parameters.
+  - `requirements.txt`: Lists the dependencies for the package.
+  - `cli/cli.py`: CLI script to interact with the package.
+
+### License
+
+This project is licensed under the **APACHE License** - see the [LICENSE](LICENSE) file for details.
