@@ -1,12 +1,12 @@
-import click
 import os
-from deeptune.evaluation.eval_mark_I import (
-    load_and_preprocess_image,
-    generate_embeddings,
-    calculate_intra_cluster_distances,
-)
-from keras.models import load_model
+
+import click
 import numpy as np
+from keras.models import load_model
+
+from deeptune.evaluation.eval_mark_I import (calculate_intra_cluster_distances,
+                                             generate_embeddings,
+                                             load_and_preprocess_image)
 
 
 @click.group()

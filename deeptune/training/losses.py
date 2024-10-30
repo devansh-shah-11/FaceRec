@@ -1,7 +1,7 @@
+import numpy as np
 import tensorflow as tf
 import tensorflow.keras.backend as K
 from tensorflow.keras.losses import Loss
-import numpy as np
 
 
 class TripletLoss(Loss):
@@ -26,7 +26,8 @@ class ContrastiveLoss(Loss):
         y_true = K.cast(y_true, y_pred.dtype)
         pos_dist = K.sum(K.square(y_pred[:, 0] - y_pred[:, 1]), axis=-1)
         neg_dist = K.sum(K.square(y_pred[:, 0] - y_pred[:, 2]), axis=-1)
-        loss = y_true * pos_dist + (1 - y_true) * K.maximum(self.margin - neg_dist, 0.0)
+        loss = y_true * pos_dist + (1 - y_true) * \
+            K.maximum(self.margin - neg_dist, 0.0)
         return K.mean(loss)
 
 

@@ -1,7 +1,9 @@
 import os
 import random
+
 import numpy as np
 from keras.preprocessing import image
+
 
 class TripletGenerator:
     def __init__(self, dataset_path, batch_size=32, target_size=(160, 160)):
@@ -10,7 +12,13 @@ class TripletGenerator:
         self.target_size = target_size
         self.classes = os.listdir(dataset_path)
         self.class_indices = {cls: i for i, cls in enumerate(self.classes)}
-        self.image_paths = {cls: [os.path.join(dataset_path, cls, img) for img in os.listdir(os.path.join(dataset_path, cls))] for cls in self.classes}
+        self.image_paths = {
+            cls: [
+                os.path.join(dataset_path, cls, img)
+                for img in os.listdir(os.path.join(dataset_path, cls))
+            ]
+            for cls in self.classes
+        }
 
     def __len__(self):
         return len(self.classes)
@@ -38,4 +46,3 @@ class TripletGenerator:
         while True:
             for i in range(len(self)):
                 yield self[i]
-
