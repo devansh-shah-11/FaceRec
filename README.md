@@ -19,6 +19,16 @@
     <a href="https://sonarcloud.io/dashboard?id=Devasy23_FaceRec"><img src="https://sonarcloud.io/api/project_badges/measure?project=Devasy23_FaceRec&metric=vulnerabilities" alt="Vulnerabilities"></a>
 </p>
 
+## 📊 Repository Statistics
+
+| Metric | Count |
+|--------|-------|
+| ![Stars](https://img.shields.io/github/stars/devansh-shah-11/FaceRec?style=flat-square) | [Stars](https://github.com/devansh-shah-11/FaceRec/stargazers) |
+| ![Forks](https://img.shields.io/github/forks/devansh-shah-11/FaceRec?style=flat-square) | [Forks](https://github.com/devansh-shah-11/FaceRec/network/members) |
+| ![Open Issues](https://img.shields.io/github/issues/devansh-shah-11/FaceRec?style=flat-square) | [Issues](https://github.com/devansh-shah-11/FaceRec/issues) |
+| ![Open PRs](https://img.shields.io/github/issues-pr/devansh-shah-11/FaceRec?style=flat-square) | [Pull Requests](https://github.com/devansh-shah-11/FaceRec/pulls) |
+| ![Closed PRs](https://img.shields.io/github/issues-pr-closed/devansh-shah-11/FaceRec?style=flat-square) | [Closed PRs](https://github.com/devansh-shah-11/FaceRec/pulls?q=is%3Apr+is%3Aclosed) |
+
 ## 🚀 Features
 
 - **Real-Time Face Recognition:** Detect and recognize faces seamlessly in real-time.
