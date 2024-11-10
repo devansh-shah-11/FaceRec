@@ -82,6 +82,12 @@ Your application will be available at `http://localhost:5000`.
 
 </details>
 
+
+## Sequence Diagram
+
+![image.png](sequence-diagram.png)
+
+
 ## 🗄️ Database Schema
 
 1. **Create a New MongoDB Connection** using:
